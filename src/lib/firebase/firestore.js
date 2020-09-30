@@ -1,13 +1,18 @@
 export const createUserDB = (uid, email, photoUrl, nameUser) => firebase.firestore()
-.collection('users').add({
-  
-  name: nameUser,
-  email: email, 
-  uid: uid,
-  photoUrl:photoUrl
+  .collection('users').add({
 
-});
+    name: nameUser,
+    email: email,
+    uid: uid,
+    photoUrl: photoUrl
+
+  });
 
 export const readUserDB = uid => firebase.firestore().collection('users')
-.where('uid', '==', uid)
-.get();
+  .where('uid', '==', uid)
+  .get();
+
+export const addNoteToDB = (createNote) => firebase.firestore()
+  .collection('addNotes').add({
+    note: createNote,
+  });
