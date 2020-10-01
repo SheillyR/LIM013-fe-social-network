@@ -12,7 +12,13 @@ export const readUserDB = uid => firebase.firestore().collection('users')
   .where('uid', '==', uid)
   .get();
 
-export const addNoteToDB = (createNote) => firebase.firestore()
+export const addNotesToDB = (useruid, userDisplayName, createNote) => firebase.firestore()
   .collection('addNotes').add({
+    creator : useruid,
+    creatorName : userDisplayName,
     note: createNote,
   });
+
+export const readAddNotesToDB = () => firebase.firestore()
+  .collection('addNotes')
+  .get();
