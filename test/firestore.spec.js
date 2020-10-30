@@ -1,16 +1,16 @@
-/*
 import MockFirebase from 'mock-cloud-firestore';
 import {
   addNotesToDB,
   readAddNotesToDB,
+  editTextPost,
+  deletePost,
 } from '../src/lib/firebase/firestore.js';
-
 
 const fixtureData = {
   __collection__: {
-    notes: {
+    publications: {
       __doc__: {
-        post01: {
+        abc1d: {
           creatorID: '01',
           creatorName: 'Vivian',
           note: 'post agregado',
@@ -18,48 +18,33 @@ const fixtureData = {
           mode: '',
           photo: '',
         },
-        post02: {
+        abc2d: {
           creatorID: '02',
-          creatorName: 'Alex y Sheilly',
+          creatorName: 'Sheilly',
           note: 'post',
           date: '',
           mode: '',
           photo: '',
         },
-import { readAddNotesToDB, editTextPost, deletePost } from '../src/lib/firebase/firestore.js';
-
-const fixtureData = {
-  __collection__: {
-    publications: {
-      __doc__: {
-        abc1d: {
-          note: 'Hello World',
-          date: '',
-        },
-
-        abc2d: {
-          note: 'Good morning',
-          date: '',
-        },
-
       },
     },
   },
 };
+
 global.firebase = new MockFirebase(fixtureData, { isNaiveSnapshotListenerEnabled: true, });
 
 describe('addNotesToDB', () => {
   it('Deberia de poder agregar un post', (done) => {
-    return addNotesToDB('03', 'vivian', 'publications agregado', '', '', '')
-    .then(() => readAddNotesToDB(
-      (data) => {
-        const result = data.find(element => element.note === 'publications agregado');
-        expect(result.note).toBe('publications agregado');
-        done();
-      }
-    ));
-
-global.firebase = new MockFirebase(fixtureData, { isNaiveSnapshotListenerEnabled: true });
+    return addNotesToDB('03', 'vivian', 'publications agregado', '', '', '', '', '')
+      .then(() => readAddNotesToDB(
+        (data) => {
+          const result = data.find((element) => element.note === 'publications agregado');
+          expect(result.note).toBe('publications agregado');
+          done();
+        },
+      ));
+  });
+});
 
 describe('Edit a post', () => {
   it('Should be able to edit a post', (done) => {
@@ -86,4 +71,3 @@ describe('Delete a post', () => {
       ));
   });
 });
-*/
