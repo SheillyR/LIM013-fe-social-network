@@ -31,7 +31,7 @@ const fixtureData = {
   },
 };
 
-global.firebase = new MockFirebase(fixtureData, { isNaiveSnapshotListenerEnabled: true, });
+global.firebase = new MockFirebase(fixtureData, { isNaiveSnapshotListenerEnabled: true });
 
 describe('addNotesToDB', () => {
   it('Deberia de poder agregar un post', (done) => {

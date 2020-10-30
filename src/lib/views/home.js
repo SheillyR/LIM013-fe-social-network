@@ -8,16 +8,9 @@ import {
 import { getCommentToDB, count } from '../firebase/firestore.js';
 import { uploadImgPost } from '../firebase/storage.js';
 import { getUser } from '../firebase/auth.js';
-/*
-const formatoFecha = (fecha) => {
-  const fechaFin = `${fecha.getDate()} - ${fecha.getMonth() + 1} - ${fecha.getFullYear()}  ${fecha.getHours()}:${fecha.getMinutes()}`;
-  return fechaFin;
-};
-*/
+
 const commentTemplate = (comData) => {
   const commentList = document.createElement('div');
-  // console.log('doc', doc);
-  // commentList.classList = 'comment-share';
   commentList.innerHTML = `
   <div id="comment-container">
   <span><img class='user-image-comment' src='${comData.photo}'></span>
@@ -29,18 +22,10 @@ const commentTemplate = (comData) => {
   `;
   return commentList;
 };
-/* <div class='container-user-comment>
-</div>
-*/
+
 const postTemplate = (doc) => {
   const user = getUser();
-  // console.log(doc);
-  // console.log(doc.id);
-  // console.log(commentDoc);
-  // const user=readUser(doc.creatorID);
-  // console.log('userHome',user);
   const div = document.createElement('div');
-  // console.log('doc', doc);
   div.classList = 'share-post';
   div.innerHTML = `
   <div class='container-user'>
@@ -95,23 +80,17 @@ const postTemplate = (doc) => {
     showOptions.classList.add('show');
     options.addEventListener('change', (e) => {
       const selectedOption = e.target.value;
-      // console.log(selectedOption);
       if (selectedOption === 'edit') {
-        console.log('Aquí puede editar');
-        console.log(doc.id);
-        // console.log(doc.creatorID);
         textPost.classList.add('hidden');
         textPost.classList.remove('show');
         editOption.classList.add('show');
         editOption.classList.remove('hidden');
         accept.addEventListener('click', () => {
           const editTextPostVal = div.querySelector('#edit-text-post').value;
-          console.log(editTextPostVal);
           const newDate = new Date();
           editTextPostToDB(doc.id, editTextPostVal, newDate);
         });
       } else if (selectedOption === 'delete') {
-        console.log('Data eliminada');
         deletePostToDB(doc.id);
       }
     });
@@ -124,7 +103,6 @@ const postTemplate = (doc) => {
   const closeIcon = div.querySelector('#close-icon');
   const commentShow = div.querySelector('#comment-show');
   commentIcon.addEventListener('click', () => {
-    console.log('Funciona');
     commentBox.classList.add('show');
     commentBox.classList.remove('hidden');
     commentShow.classList.add('show');
@@ -159,7 +137,6 @@ const postTemplate = (doc) => {
   getCommentToDB(doc.id, (comments) => {
     commentShow.innerHTML = '';
     comments.forEach((element) => {
-      // console.log(element);
       commentShow.appendChild(commentTemplate(element));
     });
   });
@@ -167,19 +144,13 @@ const postTemplate = (doc) => {
   // Likes counter
   const like = div.querySelector('#like');
   like.addEventListener('click', () => {
-    console.log(event.target);
     console.log('contando');
     count(doc.id, user.uid);
-    /*
-    likeToPost(doc.id, user.uid);
-    console.log('Like a post');
-    */
   });
   return div;
 };
 export const homeTemplate = (posts) => {
   const user = getUser();
-  console.log(user);
   const viewHome = document.createElement('section');
   viewHome.innerHTML = ` 
     <header>
@@ -211,7 +182,6 @@ export const homeTemplate = (posts) => {
     <div>
       <textarea id='box-post' class='textarea' placeholder='¿Qué quieres compartir?'></textarea>
     </div>
-   
     <div id= 'preview-img-post' class='preview-img-post'>
     <div id= "show-img">
     <img id="etiquette-image"></div>
@@ -238,20 +208,7 @@ export const homeTemplate = (posts) => {
   const post = viewHome.querySelector('#mode-post');
   const btnShare = viewHome.querySelector('#btn-share');
   const crossMark = viewHome.querySelector('#cross-mark');
-  // const modePost = viewHome.querySelector('#mode-post');
-  /*
-  modePost.addEventListener('change', (e) => {
-    const selectedMode = e.target.value;
-    // Share post
-    btnShare.addEventListener('click', () => {
-      const textPostVal = textPost.value;
-      const date = new Date();
-      createAddNoteToDB(localStorage.getItem('userID'), localStorage.getItem('userName'), textPostVal, date, selectedMode);
-      // Clear text content
-      // listPublication();
-    });
-  });
-  */
+
   let files = [];
   // Previsualize image
   const uploadImg = viewHome.querySelector('#upload-img');
@@ -260,30 +217,24 @@ export const homeTemplate = (posts) => {
   uploadImg.addEventListener('change', (event) => {
     uploadImg.classList.remove('show');
     crossMark.removeAttribute('style');
-    console.log(uploadImg);
     const reader = new FileReader();
     files = event.target.files;
-    console.log(files);
     reader.readAsDataURL(event.target.files[0]);
-    console.log(reader);
-    //
+
     reader.onload = () => {
       etiquetteImage.src = reader.result;
-      console.log(etiquetteImage);
     };
-    console.log(etiquetteImage.src);
   });
 
   crossMark.addEventListener('click', () => {
-    etiquetteImage.src = "";
-    uploadImg.value = "";
+    etiquetteImage.src = '';
+    uploadImg.value = '';
     crossMark.style.display = 'none';
-  })
+  });
   // Share post
   btnShare.addEventListener('click', () => {
     const textPostVal = textPost.value;
     const postVal = post.value;
-    // console.log(postVal, 'probando valor');
     const date = new Date();
     if (files[0] !== undefined) {
       uploadImgPost(
@@ -297,7 +248,6 @@ export const homeTemplate = (posts) => {
       );
     }
     if (textPostVal !== '' && files[0] === undefined) {
-      console.log(etiquetteImage.src);
       createAddNoteToDB(
         user.uid,
         user.displayName,
@@ -316,10 +266,9 @@ export const homeTemplate = (posts) => {
     messagePost.appendChild(postTemplate(publication));
   });
 
-  const btnProfile = viewHome.querySelector("#btn-profile");
-  btnProfile.addEventListener("click", () => {
-    console.log("evento change-profile");
-    window.location.hash = "#/profile";
+  const btnProfile = viewHome.querySelector('#btn-profile');
+  btnProfile.addEventListener('click', () => {
+    window.location.hash = '#/profile';
   });
   const btnlogOut = viewHome.querySelector('#btn-log-out');
   btnlogOut.addEventListener('click', () => {

@@ -48,18 +48,7 @@ export default () => {
   // Sign in with google
   viewLogin.querySelector('#btn-google').addEventListener('click', (event) => {
     event.preventDefault();
-    // console.log('hola entre aqui');
     loginGoogle();
   });
-
-  /*
-  // Sign in with facebook
-  viewLogin.querySelector('#btn-facebook').addEventListener('click', (event) => {
-    event.preventDefault();
-    // console.log("Hola ingresaste a Facebook");
-    loginFacebook();
-  });
-  */
-
   return viewLogin;
 };

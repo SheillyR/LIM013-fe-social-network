@@ -1,7 +1,7 @@
-import { getUser } from "../firebase/auth.js";
+import { getUser } from '../firebase/auth.js';
 
 export const profile = (doc) => {
-  const user= getUser();
+  const user = getUser();
   console.log('user', user);
   const editProfile = document.createElement('section');
   editProfile.innerHTML = ` 
@@ -69,12 +69,6 @@ export const profile = (doc) => {
     updateProfile.classList.add('show');
     editTextProfileToDB(users.id, creatorName, creatorDirections, creatorAbout, creatorPreferences);
   });
-/*
-  users.forEach((user) => {
-    updateProfile.appendChild(infoProfile(user));
-    console.log(updateProfile);
-  });
-*/
 
   return editProfile;
 };

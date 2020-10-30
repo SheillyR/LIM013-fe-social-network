@@ -53,18 +53,6 @@ describe('login with Google', () => {
   });
 });
 
-// Sign in with Facebook
-describe('Should be a function ', () => {
-  it('function signin', () => expect(typeof myModule.singInFacebook).toBe('function'));
-});
-describe('logInFacebook', () => {
-  it('login with Facebook', () => myModule.singInFacebook().then((user) => {
-    expect(myModule.getUser).not.toBe(null);
-    expect(user.isAnonymous).toBe(false);
-    expect(user.providerData).toEqual([{ providerId: 'facebook.com' }]);
-  }));
-});
-
 // getUser
 describe('getUser', () => {
   it('You should be able to see if a user is logged in or not', () => {

@@ -1,9 +1,8 @@
 import { createAddNoteToDB } from '../firebase-controller/home-controller.js';
-import { firebaseInit } from './firebase-init.js';
 
 // Create storage ref
 export const uploadImgPost = (uid, file, username, textPostVal, date, postVal, photoURL) => {
-  const storageRef = firebaseInit.storage().ref(`shared_images/${uid}/${file.name}`);
+  const storageRef = firebase.storage().ref(`shared_images/${uid}/${file.name}`);
   // Upload file
   const uploadTask = storageRef.put(file);
   uploadTask.on('state_changed', (snapshot) => {
@@ -18,7 +17,6 @@ export const uploadImgPost = (uid, file, username, textPostVal, date, postVal, p
     // Handle successful uploads on complete
     // For instance, get the download URL: https://firebasestorage.googleapis.com/...
     uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
-      console.log('File available at', downloadURL);
       createAddNoteToDB(
         uid,
         username,

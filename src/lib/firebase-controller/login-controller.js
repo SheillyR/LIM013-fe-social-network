@@ -1,9 +1,8 @@
 import { readUserDB, createUserDB } from '../firebase/firestore.js';
-import { singInGoogle, singInFacebook, loginUser } from '../firebase/auth.js';
+import { singInGoogle, loginUser } from '../firebase/auth.js';
 const readCreateUserDB = (useruid, emailUser, userPhotoUrl, username) => {
   readUserDB(useruid)
     .then((res) => {
-      console.log('res', res);
       if (res.empty) {
         createUserDB(useruid, emailUser, userPhotoUrl, username);
       } else {
@@ -17,7 +16,6 @@ const readCreateUserDB = (useruid, emailUser, userPhotoUrl, username) => {
 export const loginWithEmailAndPassword = (txtEmailVal, txtpasswordVal) => {
   loginUser(txtEmailVal, txtpasswordVal)
     .then((res) => {
-      console.log('res');
       readUserDB(res.user.uid)
         .then((querySnapshot) => {
           querySnapshot.forEach((refDoc) => {
@@ -37,18 +35,6 @@ export const loginWithEmailAndPassword = (txtEmailVal, txtpasswordVal) => {
 };
 export const loginGoogle = () => {
   singInGoogle()
-    .then((res) => {
-      console.log(res);
-      console.log('entro aqui');
-      window.location.hash = '#/home';
-      readCreateUserDB(res.user.uid, res.user.email, res.user.photoURL, res.user.displayName);
-    })
-    .catch((error) => {
-      if (error) throw error;
-    });
-};
-export const loginFacebook = () => {
-  singInFacebook()
     .then((res) => {
       window.location.hash = '#/home';
       readCreateUserDB(res.user.uid, res.user.email, res.user.photoURL, res.user.displayName);
