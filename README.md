@@ -83,16 +83,16 @@ Te dejamos un ejemplo de cómo definir criterios de aceptación y definiciones d
 ## 4. Diseño de la Interfaz de Usuario (prototipo de alta fidelidad)
 
 * Vista mobile
-<center>
-<img src="https://i.ibb.co/k3274Sb/mobile-login.png" alt="mobile-login" border="0" width=40% style = "margin: 15px">
-<img src="https://i.ibb.co/fxf0w5d/mobile-second.png" alt="mobile-second" border="0" width=40% >
-</center>
+
+<center><img src="https://i.ibb.co/k3274Sb/mobile-login.png" alt="mobile-login" border="0" width=20% style = "margin: 15px"></center>
+<center><img src="https://i.ibb.co/fxf0w5d/mobile-second.png" alt="mobile-second" border="0" width=20% ></center>
+
 
 * Vista Desktop
-<center>
-<img src="https://i.ibb.co/Z63bZ0x/Leaders-are-Readers-desktop.jpg" alt="Leaders-are-Readers-desktop" border="0" width=80% style = "margin: 15px">
-<img src="https://i.ibb.co/4Yt6KQ9/desktop-home.jpg" alt="desktop-home" border="0 " width=80% style = "margin: 15px">
-</center>
+
+<center><img src="https://i.ibb.co/Z63bZ0x/Leaders-are-Readers-desktop.jpg" alt="Leaders-are-Readers-desktop" border="0" width=80% style = "margin: 15px"></center>
+<center><img src="https://i.ibb.co/4Yt6KQ9/desktop-home.jpg" alt="desktop-home" border="0 " width=80% style = "margin: 15px"></center>
+
 
 * Prototipo Final
 <center>
