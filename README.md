@@ -21,7 +21,7 @@ Leaders are Readers es una red social para lectores y recomendaciones de libros,
 
 ## 2. Resumen del proyecto
 
-Leaders are Readers es una red social donde los usuarios podrán crear una cuenta por correo electrónico o logearse por su cuenta de gmail. Al ingresar a la página principal los usuarios podrán realizar publicaciones (texto e imagen), editarlas, eliminarlas y realizar comentarios. Además, interactuarán con otros usuarios dando like 👍 y dislike 👎 a las publicaciones que se compartan en la red.
+Leaders are Readers es una red social donde los usuarios podrán crear una cuenta por correo electrónico o logearse con su cuenta de gmail. Al ingresar a la página principal los usuarios podrán realizar publicaciones (texto e imagen), editarlas, eliminarlas y realizar comentarios. Además, interactuarán con otros usuarios dando like 👍 y dislike 👎 a las publicaciones que se compartan en la red.
 
 ## 3. Historias de usuario
 
