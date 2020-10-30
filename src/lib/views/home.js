@@ -163,9 +163,11 @@ const postTemplate = (doc) => {
       commentShow.appendChild(commentTemplate(element));
     });
   });
+
   // Likes counter
   const like = div.querySelector('#like');
   like.addEventListener('click', () => {
+    console.log(event.target);
     console.log('contando');
     count(doc.id, user.uid);
     /*

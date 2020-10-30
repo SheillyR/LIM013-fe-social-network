@@ -1,9 +1,9 @@
 import { createAddNoteToDB } from '../firebase-controller/home-controller.js';
-import { storage } from './firebase-init.js';
+import { firebaseInit } from './firebase-init.js';
 
 // Create storage ref
 export const uploadImgPost = (uid, file, username, textPostVal, date, postVal, photoURL) => {
-  const storageRef = storage.ref(`shared_images/${uid}/${file.name}`);
+  const storageRef = firebaseInit.storage().ref(`shared_images/${uid}/${file.name}`);
   // Upload file
   const uploadTask = storageRef.put(file);
   uploadTask.on('state_changed', (snapshot) => {

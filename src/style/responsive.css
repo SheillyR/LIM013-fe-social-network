@@ -55,7 +55,7 @@
 
     
 }
-@media screem and (max-width: 1000px){
+@media screen and (max-width: 1000px){
     form{
         width: 290px;
     }

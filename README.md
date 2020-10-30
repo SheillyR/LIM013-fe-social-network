@@ -5,10 +5,8 @@
 * [1. Definición del Producto](#1-definición-del-producto)
 * [2. Resumen del proyecto](#2-resumen-del-proyecto)
 * [3. Historias de usuario](#3-historias-de-usuario)
-* [4. Consideraciones generales](#4-consideraciones-generales)
-* [5. Criterios de aceptación mínimos del proyecto](#5-criterios-de-aceptación-mínimos-del-proyecto)
-* [6. Entrega](#6-entrega)
-* [7. Pistas, tips y lecturas complementarias](#7-pistas-tips-y-lecturas-complementarias)
+* [4. Diseño de la Interfaz de Usuario (prototipo de alta fidelidad)](#4-diseño-de-la-interfaz-de-usuario)
+* [5. Objetivos de aprendizaje](#5-objetivos-de-aprendizaje)
 
 ## 1. Definición del Producto
 
@@ -23,7 +21,7 @@ Leaders are Readers es una red social para lectores y recomendaciones de libros,
 
 ## 2. Resumen del proyecto
 
-Leaders are Readers es una red social donde los usuarios podrán crear una cuenta por correo electrónico o logearse por su cuenta de gmail. Al ingresar a la página principal los usuarios podrán realizar publicaciones (texto e imagen), editarlas, eliminarlas y realizar comentarios. Además, interactuaran con otros usuarios dando like 👍 y dislike 👎 a las publicaciones que se compartan en la red.
+Leaders are Readers es una red social donde los usuarios podrán crear una cuenta por correo electrónico o logearse por su cuenta de gmail. Al ingresar a la página principal los usuarios podrán realizar publicaciones (texto e imagen), editarlas, eliminarlas y realizar comentarios. Además, interactuarán con otros usuarios dando like 👍 y dislike 👎 a las publicaciones que se compartan en la red.
 
 ## 3. Historias de usuario
 
@@ -84,22 +82,22 @@ Te dejamos un ejemplo de cómo definir criterios de aceptación y definiciones d
 
 ## 4. Diseño de la Interfaz de Usuario (prototipo de alta fidelidad)
 
-Debes definir cuál será el flujo que seguirá el usuario dentro de tu aplicación
-y, con eso, diseñar la Interfaz de Usuario (UI por sus siglas en inglés) que
-siga este flujo.
-
-A continuación te proporcionamos un layout (diseño) de la vista mobile y desktop que puedes
-elegir replicar visualmente y cuyo contenido, colores y fuentes de texto, dejaremos a tu elección.
-En caso de elegir trabajar con este layaout (diseño) ya no deberás de crear un prototipo de baja
-fidelidad.
-
 * Vista mobile
-
-    ![mobile](https://user-images.githubusercontent.com/32286663/56174616-ec9f6100-5fb8-11e9-9edb-d5ef7c251d9c.png)
+<center>
+<img src="https://i.ibb.co/k3274Sb/mobile-login.png" alt="mobile-login" border="0" width=40% style = "margin: 15px">
+<img src="https://i.ibb.co/fxf0w5d/mobile-second.png" alt="mobile-second" border="0" width=40% >
+</center>
 
 * Vista Desktop
+<center>
+<img src="https://i.ibb.co/Z63bZ0x/Leaders-are-Readers-desktop.jpg" alt="Leaders-are-Readers-desktop" border="0" width=80% style = "margin: 15px">
+<img src="https://i.ibb.co/4Yt6KQ9/desktop-home.jpg" alt="desktop-home" border="0 " width=80% style = "margin: 15px">
+</center>
 
-    ![desktop](https://user-images.githubusercontent.com/32286663/56174626-fcb74080-5fb8-11e9-8854-26e8d9c4e25f.png)
+* Prototipo Final
+<center>
+<img src="https://i.ibb.co/hCYcgYm/views.png" alt="views" border="0">
+</center>
 
 ## 5. Objetivos de aprendizaje
 
